@@ -52,7 +52,7 @@ def reply(session):
         bot.send_message(session.chat.id, "De boas, pra cascavel é só decida")
 
     elif re.findall("crocs",session.text.lower()): #bad
-        bot.send_message(session.chat.id, "encurtador.com.br/juxY7")
+        bot.send_message(session.chat.id, "https://github.com/Peterfilho/rpg_dice_bot/blob/master/images/crocs.jpg?raw=true")
 
     elif re.findall("chandra",session.text.lower()): #bad
         bot.send_message(session.chat.id, "encurtador.com.br/aMNY8")
@@ -70,18 +70,18 @@ def reply(session):
         bot.send_message(session.chat.id, "*Maycão*??", parse_mode='MARKDOWN')
 
     elif re.findall("limaozinho",session.text.lower()):
-        bot.send_photo(session.chat.id, "images/limaozinho.jpg")
+        bot.send_photo(session.chat.id, "https://github.com/Peterfilho/rpg_dice_bot/blob/master/images/limaozinho.jpg?raw=true")
 
-    elif re.findall("Matheus",session.text.lower()):
+    elif re.findall("matheus",session.text.lower()):
         bot.send_message(session.chat.id, "A mãe do Matheus está doente")
 
-    elif re.findall("Maycao",session.text.lower()):
-        bot.send_message(session.chat.id, "Maycao nunca pode")
+    elif re.findall("maycao",session.text.lower()):
+        bot.send_message(session.chat.id, "O Maycao nunca pode")
 
     elif re.findall("vacilao",session.text.lower()):
         bot.send_message(session.chat.id, "meu pe na tua mao")
 
-    elif re.findall("Bastiao",session.text.lower()):
+    elif re.findall("bastiao",session.text.lower()):
         bot.send_message(session.chat.id, "só bally")
 
     elif re.findall("lilo",session.text.lower()):
@@ -91,7 +91,7 @@ def reply(session):
         bot.send_message(session.chat.id, "Postinho e Pia bugado aprovam a linguiça fedida kkkkk")
 
     elif re.findall("jackson",session.text.lower()):
-        bot.send_message(session.chat.id, "encurtador.com.br/grEKT")
+        bot.send_message(session.chat.id, "https://github.com/Peterfilho/rpg_dice_bot/blob/master/images/jackson2.jpg?raw=true")
 
     elif re.findall("proteção contra qual cor?",session.text.lower()):
         bot.send_message(session.chat.id, "Branco!")
@@ -106,45 +106,73 @@ def reply(session):
         bot.send_message(session.chat.id, "Postinho e Pia bugado aprovam a linguiça fedida kkkkk")
 
     elif re.findall("leonardao",session.text.lower()):
-        bot.send_message(session.chat.id, "encurtador.com.br/bEOVY")
+        bot.send_message(session.chat.id, "https://github.com/Peterfilho/rpg_dice_bot/blob/master/images/leonardao2.jpeg?raw=true")
 
     elif re.findall("lilo2",session.text.lower()):
-        bot.send_message(session.chat.id, "encurtador.com.br/hACFL")
+        bot.send_message(session.chat.id, "https://github.com/Peterfilho/rpg_dice_bot/blob/master/images/lilo2.jpg?raw=true")
 
     elif re.findall("pia bugado",session.text.lower()):
-        bot.send_message(session.chat.id, "encurtador.com.br/epIJ9")
+        bot.send_message(session.chat.id, "https://github.com/Peterfilho/rpg_dice_bot/blob/master/images/pia-bugado.jpg?raw=true")
+
+    elif re.findall("pia bugado2",session.text.lower()):
+        bot.send_message(session.chat.id, "https://github.com/Peterfilho/rpg_dice_bot/blob/master/images/pensativo.jpg?raw=true")
 
     elif re.findall("lilo3",session.text.lower()):
-        bot.send_message(session.chat.id, "encurtador.com.br/jrIKL")
+        bot.send_message(session.chat.id, "https://github.com/Peterfilho/rpg_dice_bot/blob/master/images/lilo3.jpg?raw=true")
 
     elif re.findall("buraco negro",session.text.lower()):
-        bot.send_message(session.chat.id, "encurtador.com.br/epsK2")
+        bot.send_message(session.chat.id, "https://github.com/Peterfilho/rpg_dice_bot/blob/master/images/backhole.jpg?raw=true")
 
     elif re.findall("maycao2",session.text.lower()):
-        bot.send_message(session.chat.id, "encurtador.com.br/EIU23")
+        bot.send_message(session.chat.id, "https://github.com/Peterfilho/rpg_dice_bot/blob/master/images/maycao3.jpeg?raw=true")
 
     elif re.findall("raquel",session.text.lower()):
-        bot.send_message(session.chat.id, "encurtador.com.br/csR56")
+        bot.send_message(session.chat.id, "https://github.com/Peterfilho/rpg_dice_bot/blob/master/images/raquel.jpg?raw=true")
 
     elif re.findall("lilo4",session.text.lower()):
-        bot.send_message(session.chat.id, "encurtador.com.br/egiT7")
+        bot.send_message(session.chat.id, "https://github.com/Peterfilho/rpg_dice_bot/blob/master/images/lilo.jpg?raw=true")
 
     elif re.findall("jackson2",session.text.lower()):
-        bot.send_message(session.chat.id, "encurtador.com.br/gFKRY")
+        bot.send_message(session.chat.id, "https://github.com/Peterfilho/rpg_dice_bot/blob/master/images/jackson.jpg?raw=true")
 
     elif re.findall("peterson2",session.text.lower()):
-        bot.send_message(session.chat.id, "encurtador.com.br/imAMT")
+        bot.send_message(session.chat.id, "https://github.com/Peterfilho/rpg_dice_bot/blob/master/images/peterson.jpg?raw=true")
 
     elif re.findall("peterson",session.text.lower()):
         bot.send_message(session.chat.id, "O que? Você quer que eu te mande algum meme do meu criador? Deve estar louco mesmo kkkk")
 
     elif re.findall("peterson3",session.text.lower()):
-        bot.send_message(session.chat.id, "encurtador.com.br/gjuzT")
+        bot.send_message(session.chat.id, "https://github.com/Peterfilho/rpg_dice_bot/blob/master/images/peterson2.jpg?raw=true")
 
     elif re.findall("pedro de lara",session.text.lower()):
-        bot.send_message(session.chat.id, "encurtador.com.br/ktwD9")
+        bot.send_message(session.chat.id, "https://github.com/Peterfilho/rpg_dice_bot/blob/master/images/pedro-de-lara.jpg?raw=true")
 
     elif re.findall("entao voce é desses?",session.text.lower()):
-        bot.send_photo(session.chat.id, "https://scontent.fgpb3-1.fna.fbcdn.net/v/t1.0-9/1507909_664772920239918_1244974174_n.jpg?_nc_cat=109&_nc_sid=ca434c&_nc_eui2=AeH6AS2D_pE0m_2lhEDt90y_fbjOSoycHXt9uM5KjJwde5b-kvseOfoFhPxiyAym9wXz_GywynW0YVkmf2O3AvUN&_nc_ohc=5UWqjDiuYTIAX-fUq20&_nc_ht=scontent.fgpb3-1.fna&oh=e3bfdb09c5aaba6bcc2934eb6ec407b5&oe=5EB156BE")
+        bot.send_photo(session.chat.id, "https://github.com/Peterfilho/rpg_dice_bot/blob/master/images/entao-voce-e-desses.jpg?raw=true")
+
+    elif re.findall("professor",session.text.lower()):
+        bot.send_photo(session.chat.id, "https://github.com/Peterfilho/rpg_dice_bot/blob/master/images/professor.png?raw=true")
+
+    elif re.findall("grisalho",session.text.lower()):
+        bot.send_photo(session.chat.id, "https://github.com/Peterfilho/rpg_dice_bot/blob/master/images/maycao2.jpg?raw=true")
+
+    elif re.findall("infect",session.text.lower()):
+        bot.send_photo(session.chat.id, "https://github.com/Peterfilho/rpg_dice_bot/blob/master/images/maycao-infect.jpg?raw=true")
+
+    elif re.findall("jitte",session.text.lower()):
+        bot.send_photo(session.chat.id, "https://github.com/Peterfilho/rpg_dice_bot/blob/master/images/jite.jpg?raw=true")
+
+    elif re.findall("rego",session.text.lower()):
+        bot.send_photo(session.chat.id, "https://github.com/Peterfilho/rpg_dice_bot/blob/master/images/jite2.jpg?raw=true")
+
+    elif re.findall("fnm",session.text.lower()):
+        bot.send_photo(session.chat.id, "https://github.com/Peterfilho/rpg_dice_bot/blob/master/images/fnm.jpg?raw=true")
+
+    elif re.findall("emo",session.text.lower()):
+        bot.send_photo(session.chat.id, "https://github.com/Peterfilho/rpg_dice_bot/blob/master/images/emo.jpg?raw=true")
+
+    elif re.findall("bullet",session.text.lower()):
+        bot.send_photo(session.chat.id, "https://github.com/Peterfilho/rpg_dice_bot/blob/master/images/bullet.jpeg?raw=true")
+
 
 bot.polling()
