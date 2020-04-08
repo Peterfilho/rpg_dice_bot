@@ -2,15 +2,17 @@ import telebot
 import re
 from conf.settings import TELEGRAM_TOKEN
 from random import randint
-
+from flask import Flask, request
 bot = telebot.TeleBot(TELEGRAM_TOKEN)
+
+server = Flask(__name__)
 
 @bot.message_handler(commands=['info', 'help'])
 def send_welcome(message):
     bot.reply_to(message, "⚔ Funcionalidades ⚔\n"
     "\n*🎲 Jogar dados:* Para jogar dados você deve utilizar o comando roll seguido do número do dado"
     "e o bot retornará um número inteiro positivo de 1 até o valor que informar, ou seja: Se você utilizar"
-    "o comando roll 20 ele estará jogando um d20. Se você utilizar roll 200 ele estará utilizando um d200\n"
+    "o comando roll 20 ele estará jogando um d20. Se você utilizar roll 200 ele estará utilizando um d200"
     "Exemplo: ``` roll 20``` \n"
     "\n*👉 Selecionar um elemento aleatóriamente:* Sim, tem essa funcionalidade também ela basicamente recebe"
     "uma lista de elementos e seleciona um deles aleatóriamente. O comando para isso é *sort* seguido dos elementos"
@@ -20,7 +22,7 @@ def send_welcome(message):
 
 @bot.message_handler(content_types = ['new_chat_members'])
 def wellcome_message(session):
-    bot.send_message(CHAT_ID, "🛡 Bem vindo *{}*! \nEu sou o Mestre aqui! Mais informações digite /info 😉"
+    bot.send_message(CHAT_ID, "🛡 Bem vindo *{}*! 🛡  \nEu sou o Mestre aqui! Mais informações digite /info 😉"
     .format(session.new_chat_member.first_name), parse_mode='MARKDOWN')
     sleep(10)
 
@@ -30,13 +32,18 @@ def reply(session):
     if re.findall("roll",session.text.lower()):
         search = search.split(" ")
         print(search)
+        #search = int(search[1])
+        if search[1].isnumeric() == False:
+            bot.send_message(session.chat.id, "⚠ Opa, sanidade está baixa ai? \n"
+            "\nComo que vou rolar *{}*?\n \nTenta com números, verme insolente".format(search[1]), parse_mode='MARKDOWN')
+            return
         result = randint(1,int(search[1]))
         print(result)
         if result == 1:
-            bot.send_message(session.chat.id, "🎲 Result: *{}* \n😱 SE FODEU! 😖".format(result), parse_mode='MARKDOWN')
+            bot.send_message(session.chat.id, "🎲 Result: *{}* \n \n😱 SE FODEU! 😖".format(result), parse_mode='MARKDOWN')
             return
         if result == int(search[1]):
-            bot.send_message(session.chat.id, "🎲 Result: *{}* \n😯 Carai biri jim 😮".format(result), parse_mode='MARKDOWN')
+            bot.send_message(session.chat.id, "🎲 Result: *{}* \n \n😯 Carai biri jim 😮".format(result), parse_mode='MARKDOWN')
             return
         else:
             bot.send_message(session.chat.id, "🎲 Result: *{}*".format(result), parse_mode='MARKDOWN')
@@ -44,6 +51,12 @@ def reply(session):
     elif re.findall("sort",session.text.lower()):
         items = search.split(", ")
         print(search)
+        if len(items) <= 1:
+            bot.send_message(session.chat.id, "⚠ Opa, algo deu errado. ⚠ \n"
+            "Tenta colocar o comando depois os nomes dos elementos *separados por vírgula e com espaço*\n"
+            "Por exemplo: ``` sort tomate, cebola, abacaxi ```"
+            "\nMeu deus que a gente tem que ensinar de tudo 🤦‍♂️", parse_mode='MARKDOWN')
+            return
         for item in items:
             sort = item
         print(sort)
@@ -182,5 +195,26 @@ def reply(session):
     elif re.findall("bullet",session.text.lower()):
         bot.send_photo(session.chat.id, "https://github.com/Peterfilho/rpg_dice_bot/blob/master/images/bullet.jpeg?raw=true")
 
+    elif re.findall("lovecraft",session.text.lower()):
+        bot.send_message(session.chat.id, "O mundo é deveras cômico, mas a piada está na raça humana.\n \n -H.P. Lovecraft")
 
-bot.polling()
+    elif re.findall("inteligente",session.text.lower()):
+        bot.send_message(session.chat.id, "A coisa mais misericordiosa do mundo é, segundo penso, a incapacidade da mente humana"
+        "em correlacionar tudo o que sabe. Vivemos em uma plácida ilha de ignorância em meio a mares negros de infinitude, e não"
+        "fomos feitos para ir longe.\n \n -H.P. Lovecraft")
+
+#bot.polling()
+
+@server.route("/{}".format(TELEGRAM_TOKEN), methods=['POST'])
+def getMessage():
+    bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
+    return "!", 200
+
+@server.route("/")
+def webhook():
+    bot.remove_webhook()
+    bot.set_webhook(url='https://peterfilhorpgbot.herokuapp.com/' + TELEGRAM_TOKEN)
+    return "!", 200
+
+if __name__ == "__main__":
+    server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
