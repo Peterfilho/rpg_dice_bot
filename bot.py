@@ -4,8 +4,8 @@ import os
 from conf.settings import TELEGRAM_TOKEN
 from random import randint
 from flask import Flask, request
-bot = telebot.TeleBot(TELEGRAM_TOKEN)
 
+bot = telebot.TeleBot(TELEGRAM_TOKEN)
 server = Flask(__name__)
 
 @bot.message_handler(commands=['info', 'help'])
@@ -72,16 +72,16 @@ def reply(session):
         bot.send_message(session.chat.id, "Lilo GAY")
 
     elif re.findall("cascavel",session.text.lower()):
-        bot.send_message(session.chat.id, "De boas, pra cascavel é só decida")
+        bot.send_message(session.chat.id, "De boas, pra cascavel é só decida 😎")
 
     elif re.findall("crocs",session.text.lower()): #bad
         bot.send_photo(session.chat.id, "https://github.com/Peterfilho/rpg_dice_bot/blob/master/images/crocs.jpg?raw=true")
 
     elif re.findall("chandra",session.text.lower()): #bad
-        bot.send_message(session.chat.id, "https://github.com/Peterfilho/rpg_dice_bot/blob/master/images/bullet2.jpeg?raw=true")
+        bot.send_photo(session.chat.id, "https://github.com/Peterfilho/rpg_dice_bot/blob/master/images/bullet2.jpeg?raw=true")
 
     elif re.findall("goyf",session.text.lower()):
-        bot.send_message(session.chat.id, "Hmm então você é desses?")
+        bot.send_message(session.chat.id, "Hmm então você é desses? 😏")
 
     elif re.findall("bally",session.text.lower()):
         bot.send_message(session.chat.id, "Ta forte isso")
@@ -116,14 +116,11 @@ def reply(session):
     elif re.findall("proteção contra qual cor?",session.text.lower()):
         bot.send_message(session.chat.id, "Branco! 🥴")
 
-    elif re.findall("infect",session.text.lower()):
-        bot.send_message(session.chat.id, "Sem dignidade -2 de sanidade 👎")
-
     elif re.findall("almofada",session.text.lower()):
         bot.send_message(session.chat.id, "Foi estuprada pelo Jackson 😢")
 
     elif re.findall("linguiça fedida",session.text.lower()):
-        bot.send_message(session.chat.id, "Postinho e Pia bugado aprovam a linguiça fedida ")
+        bot.send_message(session.chat.id, "Postinho e Pia bugado aprovam a linguiça fedida 🤢")
 
     elif re.findall("leonardao",session.text.lower()):
         bot.send_photo(session.chat.id, "https://github.com/Peterfilho/rpg_dice_bot/blob/master/images/leonardao2.jpeg?raw=true")
@@ -152,14 +149,14 @@ def reply(session):
     elif re.findall("anao",session.text.lower()):
         bot.send_photo(session.chat.id, "https://github.com/Peterfilho/rpg_dice_bot/blob/master/images/lilo.jpg?raw=true")
 
-    elif re.findall("tubaina",session.text.lower()):
+    elif re.findall("buda",session.text.lower()):
         bot.send_photo(session.chat.id, "https://github.com/Peterfilho/rpg_dice_bot/blob/master/images/jackson.jpg?raw=true")
 
-    elif re.findall("bay",session.text.lower()):
+    elif re.findall("campeao",session.text.lower()):
         bot.send_photo(session.chat.id, "https://github.com/Peterfilho/rpg_dice_bot/blob/master/images/peterson.jpg?raw=true")
 
     elif re.findall("peterson",session.text.lower()):
-        bot.send_message(session.chat.id, "O que? Você quer que eu te mande algum meme do meu criador?\n"
+        bot.send_message(session.chat.id, "O que?\n Você quer que eu te mande algum meme do meu criador? 🤨\n"
         "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk \n"
         "Deve estar louco mesmo 😂")
 
